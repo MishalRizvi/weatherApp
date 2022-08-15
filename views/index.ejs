@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherHeather</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <fieldset> 
+        <!-- Fieldset used to group several controls and labels within a web form -->
+            <form action="/" method="POST" autocomplete="off"> 
+            <!-- These attributes for the form tag allow to actually store the 
+            info given in the form to some sort of database. The data in form is sent
+            to  '/'-->
+                <input name="city" type="text" placeholder="Enter a city" required class="ghost-input"/>
+                <input id="submit" type="submit" value="Get Weather Forecast" class="ghost-input" />
+            </form>
+            <!-- This is the ejs template engine- can format js script in
+            HTML code in this way if the file is .ejs -->
+            <% if (weather !== null) { %>
+            <p><%= weather %> </p>
+            <% } %> <% if (error !== null) { %>
+            <p><%= error %> </p>
+            <% } %>
+        </fieldset>
+    </div>
+</body>
+</html>
